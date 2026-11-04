@@ -1,0 +1,26 @@
+# YOLO26 requirements
+# 用法: pip install -r requirements.txt
+#
+# 支持 PyTorch 1.7 ~ 2.x。
+# torch 与 torchvision 的版本必须配套，建议先按官方命令单独装好，再装其余依赖：
+#   torch 1.7.x  <-> torchvision 0.8.1   (Python 3.6~3.9, CUDA 9.2/10.1/10.2/11.0)
+#   torch 1.8.x  <-> torchvision 0.9.1
+#   torch 2.x    <-> torchvision 0.15+
+# 例：pip install torch==1.7.1+cu110 torchvision==0.8.1+cu110 -f https://download.pytorch.org/whl/torch_stable.html
+#
+# 注意：torch 1.7 的 wheel 只提供到 CPython 3.9，且与 numpy 2.x 的 C-ABI 不兼容，
+# 所以 numpy 必须锁在 2.0 以下。
+
+numpy>=1.18.5,<2.0
+opencv-python>=4.6.0
+Pillow>=8.0.0
+PyYAML>=5.3.1
+requests>=2.23.0
+scipy>=1.4.1
+torch>=1.7.0
+torchvision>=0.8.1
+matplotlib>=3.3
+pandas>=1.1.4
+tqdm>=4.64.0
+psutil
+# thop  # 可选: 计算 GFLOPs
