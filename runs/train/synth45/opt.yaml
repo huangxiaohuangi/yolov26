@@ -1,0 +1,58 @@
+weights: ''
+cfg: models/yolo26n.yaml
+data: D:/Desktop/_smoke/dataset2/synth2.yaml
+hyp:
+  lr0: 0.01
+  lrf: 0.05
+  momentum: 0.937
+  weight_decay: 0.0005
+  warmup_epochs: 0.0
+  warmup_momentum: 0.8
+  warmup_bias_lr: 0.1
+  box: 7.5
+  cls: 0.5
+  dfl: 1.5
+  hsv_h: 0.015
+  hsv_s: 0.5
+  hsv_v: 0.3
+  degrees: 0.0
+  translate: 0.1
+  scale: 0.3
+  shear: 0.0
+  perspective: 0.0
+  flipud: 0.0
+  fliplr: 0.5
+  mosaic: 0.3
+  mixup: 0.0
+  copy_paste: 0.0
+  cutout: 0.0
+epochs: 45
+batch_size: 16
+imgsz: 192
+rect: false
+resume: false
+nosave: false
+noval: false
+noplots: false
+cache: null
+image_weights: false
+device: cpu
+multi_scale: false
+single_cls: false
+optimizer: MuSGD
+sync_bn: false
+workers: 0
+project: runs\train
+name: synth45
+exist_ok: true
+quad: false
+cos_lr: false
+label_smoothing: 0.0
+patience: 100
+freeze:
+- 0
+save_period: -1
+seed: 0
+amp: false
+local_rank: -1
+save_dir: runs\train\synth45

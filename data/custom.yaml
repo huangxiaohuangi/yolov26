@@ -1,0 +1,19 @@
+# YOLO26 🚀 自定义数据集模板
+# 目录结构（与 YOLOv5 完全一致）:
+#   datasets/mydata/
+#   ├── images/
+#   │   ├── train/  *.jpg
+#   │   └── val/    *.jpg
+#   └── labels/
+#       ├── train/  *.txt   # 每行: class x_center y_center width height（归一化 0~1）
+#       └── val/    *.txt
+
+path: ../datasets/mydata # dataset root dir
+train: images/train # train images (relative to 'path')
+val: images/val # val images (relative to 'path')
+test: # test images (optional)
+
+# Classes
+names:
+  0: class0
+  1: class1

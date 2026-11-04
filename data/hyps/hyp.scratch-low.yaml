@@ -1,0 +1,32 @@
+# YOLO26 🚀 超参数（scratch-low：轻量增强，适合小数据集/从头训练）
+# 用法: python train.py --hyp data/hyps/hyp.scratch-low.yaml
+
+# 优化器 ------------------------------------------------------------------------
+lr0: 0.01 # 初始学习率 (SGD/MuSGD=1E-2, Adam=1E-3)
+lrf: 0.01 # 最终学习率 = lr0 * lrf (cos/linear)
+momentum: 0.937 # SGD momentum / Adam beta1
+weight_decay: 0.0005 # 优化器权重衰减（会按 batch 自动缩放）
+warmup_epochs: 3.0 # warmup epochs
+warmup_momentum: 0.8 # warmup 初始 momentum
+warmup_bias_lr: 0.1 # warmup 初始 bias lr
+
+# 损失权重 ----------------------------------------------------------------------
+box: 7.5 # box (CIoU) 损失权重
+cls: 0.5 # 分类 (BCE) 损失权重
+dfl: 1.5 # YOLO26 中 reg_max=1，该项为归一化 L1 回归损失权重
+
+# 数据增强 ----------------------------------------------------------------------
+hsv_h: 0.015 # HSV-Hue 增强 (fraction)
+hsv_s: 0.7 # HSV-Saturation 增强 (fraction)
+hsv_v: 0.4 # HSV-Value 增强 (fraction)
+degrees: 0.0 # 旋转角度 (+/- deg)
+translate: 0.1 # 平移 (+/- fraction)
+scale: 0.5 # 缩放 (+/- gain)
+shear: 0.0 # 错切 (+/- deg)
+perspective: 0.0 # 透视变换 (+/- fraction)
+flipud: 0.0 # 上下翻转概率
+fliplr: 0.5 # 左右翻转概率
+mosaic: 1.0 # 4 图 mosaic 概率
+mixup: 0.0 # mixup 概率
+copy_paste: 0.0 # copy-paste 概率
+cutout: 0.0 # cutout 概率
